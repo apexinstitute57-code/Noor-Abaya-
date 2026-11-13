@@ -1,0 +1,6 @@
+{
+  "name": "Noor Abaya – Zafarwal",
+  "description": "Luxury modest fashion store in Zafarwal, Pakistan by Fiza featuring seven signature abaya color collections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-obsidian: #0d0c0a;
+  --color-cream: #faf7f2;
+  --color-alabaster: #f2ebe0;
+  --color-gold: #c6a253;
+  --color-gold-light: #e2c886;
+  --color-gold-dark: #9c7a32;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
+@keyframes float-fabric {
+  0%, 100% {
+    transform: translate3d(0, 0px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(1.2deg);
+  }
+}
+
+@keyframes sheen-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+.animate-float-fabric {
+  animation: float-fabric 8s ease-in-out infinite;
+}
+
+.group:hover .animate-sheen {
+  animation: sheen-sweep 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float-fabric,
+  .group:hover .animate-sheen {
+    animation: none;
+  }
+}
